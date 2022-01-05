@@ -26,7 +26,7 @@ These notes were taken as part of a Udemy course I completed.
             <li><a href="#">Code Linter - Pylint - Part 2</a></li>
             <li><a href="#">Code Linter - Flake8</a></li>
             <li><a href="#">Tool - isort</a></li>
-            <li><a href="#">desc</a></li>
+            <li><a href="#">Formater - Autopep8</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>

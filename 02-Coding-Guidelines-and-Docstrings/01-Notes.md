@@ -124,3 +124,63 @@ max-complexity = 10
 ***
 ***
 # Tool - isort
+* isort will automatically order your imports
+* docs: https://pycqa.github.io/isort/
+```
+pip install isort
+```
+* usage:
+```
+isort yourpythonfile1.py yourpythonfile2.py
+
+# recursivley - basically isort **/*.py 
+isort . 
+
+# see the proposed changes without applying them
+isort file.py --diff
+
+# apply changes only if they dont introduce syntax errors
+isort --atomic
+```
+* you can make a configuration file:
+```
+touch .isort.cfg
+```
+* example config file:
+```
+# .isort.cfg
+[settings]
+
+# Maximum length (columns) for a line of program code.
+line_length = 80
+
+# Number of blank lines to separate imports from following statements.
+lines_after_imports = 2
+
+# Names of sections that group import statements.
+# The order in this sequence specifies the order the sections should appear.
+sections =
+    FUTURE
+    STDLIB
+    THIRDPARTY
+    FIRSTPARTY
+    LOCALFOLDER
+
+# Name of section for any import statement of a package not known to ‘isort’.
+default_section = LOCALFOLDER
+
+# Package names that are known for the ‘THIRDPARTY’ section.
+known_third_party = numpy,pandas,keras,tensorflow,sciypy,sklearn,pylint
+
+# Package names that are known for the ‘FIRSTPARTY’ section.
+known_first_party =
+
+# The multi-line import statement style (integer code).
+# See the ‘isort’ documentation for the meaning of each code.
+multi_line_output = 3
+
+force_single_line = True
+```
+***
+***
+# Formater - Autopep8
