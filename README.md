@@ -20,6 +20,15 @@ These notes were taken as part of a Udemy course I completed.
   <summary>Coding Guidelines and Docstrings</summary>
       <a href="#">PAGE 1</a>
         <ol>
+            <li><a href="#">PEP 8 Coding Guidelines - Part 1</a></li>
+            <li><a href="#">PEP 8 Coding Guidelines - Part 2</a></li>
+            <li><a href="#">Code Linter - Pylint - Part 1</a></li>
+            <li><a href="#">Code Linter - Pylint - Part 2</a></li>
+            <li><a href="#">Code Linter - Flake8</a></li>
+            <li><a href="#">Tool - isort</a></li>
+            <li><a href="#">desc</a></li>
+            <li><a href="#">desc</a></li>
+            <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
         </ol>
 </details>
