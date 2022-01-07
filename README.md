@@ -27,6 +27,12 @@ These notes were taken as part of a Udemy course I completed.
             <li><a href="#">Code Linter - Flake8</a></li>
             <li><a href="#">Tool - isort</a></li>
             <li><a href="#">Formater - Autopep8</a></li>
+            <li><a href="#">Formater - Black</a></li>
+            <li><a href="#">Docstring - Numpy Style</a></li>
+            <li><a href="#">Docstring - ReST (Sphinx)</a></li>
+            <li><a href="#">Docstring - Google style</a></li>
+            <li><a href="#">Code linter - Pydocstyle </a></li>
+            <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>

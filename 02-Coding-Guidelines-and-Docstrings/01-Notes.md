@@ -184,3 +184,132 @@ force_single_line = True
 ***
 ***
 # Formater - Autopep8
+* autopep8 docs: https://pypi.org/project/autopep8/
+* autopep 8 allows you to create a configuration file
+* usage - the file will be modified after running this:
+```
+autopep8 file.py
+```
+* if you just want to see the differences:
+```
+autopep8 file.py --diff
+```
+* more usage:
+```
+# this will modify the python file in place:
+
+autopep8 file.py --in-place
+```
+* the .flake8 config file controls what autopep8 AND flake 8 check for 
+***
+***
+# Formater - Black
+* black is a bit agressive and is not very configurable 
+* https://black.readthedocs.io/en/stable/
+* https://github.com/psf/black
+```
+pip install black
+```
+* usage:
+```
+# see proposed changes
+black file.py --diff
+```
+* this might not be a great tool for existing code bases - autopep8 might be a better option 
+***
+***
+# Docstring - Numpy Style
+* doc string - "documentation strings"
+### python docstring generator
+* you can use the "python docstring generator" extension to easily make extensions
+1. click settings, settings again
+2. click extensions, click the "python docstring generator" extension
+3. you can specify what docstring style to use 
+4. you can optionaly enable "generate docstring on enter"
+5. create a python function and start a docstring - choose generate docstring
+* example:
+```
+     def __init__(self, x=0, y=0):
+        '''[summary]
+
+        Parameters
+        ----------
+        x : int, optional
+            [description], by default 0
+        y : int, optional
+            [description], by default 0
+
+        Raises
+        ------
+        TypeError
+            [description]
+        '''
+        if isinstance(x, float) and isinstance(y, float):
+            self.x = x
+            self.y = y
+        else:
+            raise TypeError('You must pass in int/float values for x and y!')
+```
+* example with filled in values:
+```
+    def __init__(self, x=0, y=0):
+        '''Create a vector 2d object.
+
+        Parameters
+        ----------
+        x : int, optional
+            The X coorinate of the 2d vector, by default 0
+        y : int, optional
+            The y coorinate of the 2d vector, by default 0
+
+        Raises
+        ------
+        TypeError
+            You must pass in int/float values for x and y!
+        '''
+        if isinstance(x, float) and isinstance(y, float):
+            self.x = x
+            self.y = y
+        else:
+            raise TypeError('You must pass in int/float values for x and y!')
+```
+***
+***
+# Docstring - ReST (Sphinx)
+* example: 
+```
+    def __init__(self, x=0, y=0):
+        '''[summary]
+
+        :param x: [description], defaults to 0
+        :type x: int, optional
+        :param y: [description], defaults to 0
+        :type y: int, optional
+        :raises TypeError: [description]
+        '''
+        if isinstance(x, float) and isinstance(y, float):
+            self.x = x
+            self.y = y
+        else:
+            raise TypeError('You must pass in int/float values for x and y!')
+```
+***
+***
+# Docstring - Google style
+* example:
+```
+'''[summary]
+
+        Args:
+            x (int, optional): [description]. Defaults to 0.
+            y (int, optional): [description]. Defaults to 0.
+
+        Raises:
+            TypeError: [description]
+        '''
+```
+* this style can be easily parsed to generate HTML documentation 
+***
+***
+# Code linter - Pydocstyle 
+* docs: https://www.pydocstyle.org/en/stable/
