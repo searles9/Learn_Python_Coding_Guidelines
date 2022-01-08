@@ -1,4 +1,6 @@
 # Learn_Python_Coding_Guidelines
+# I AM STILL TAKING THE COURSE AND ADDING NOTES
+
 **Personal Notes on Python Coding Guidelines, Tooling, Unit Testing and Packages**
 
 These notes were taken as part of a Udemy course I completed.
