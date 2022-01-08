@@ -32,8 +32,8 @@ These notes were taken as part of a Udemy course I completed.
             <li><a href="#">Docstring - ReST (Sphinx)</a></li>
             <li><a href="#">Docstring - Google style</a></li>
             <li><a href="#">Code linter - Pydocstyle </a></li>
-            <li><a href="#">desc</a></li>
-            <li><a href="#">desc</a></li>
+            <li><a href="#">Type Annotations and Mypy - Part 1</a></li>
+            <li><a href="#">Type Annotations and Mypy - Part 2</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
         </ol>
