@@ -36,6 +36,19 @@ These notes were taken as part of a Udemy course I completed.
             <li><a href="#">Code linter - Pydocstyle </a></li>
             <li><a href="#">Type Annotations and Mypy - Part 1</a></li>
             <li><a href="#">Type Annotations and Mypy - Part 2</a></li>
+            <li><a href="#">Type Annotations and Mypy - Part 3</a></li>
+            <li><a href="#">Config files for the tools</a></li>
+            <li><a href="#">Setup the tools in vscode</a></li>
+        </ol>
+</details>
+
+<details>
+  <summary>Debugging, Unit-Testing and Timing</summary>
+      <a href="#">PAGE 1</a>
+        <ol>
+            <li><a href="#">Debugging in VS Code</a></li>
+            <li><a href="#">desc</a></li>
+            <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
         </ol>

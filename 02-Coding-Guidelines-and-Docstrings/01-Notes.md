@@ -338,6 +338,7 @@ match = .*\.py
 # Type Annotations and Mypy - Part 1
 * type annotations are a way of showing what type a variable or paramater should be
 * its documentation and not so much a restriction 
+* you can make a config file for mypy
 * docs: https://docs.python.org/3/library/typing.html
 * ex: 
 ```
@@ -549,3 +550,99 @@ class Vector2D:
 ***
 ***
 # Type Annotations and Mypy - Part 2
+* type examples: https://docs.python.org/3/library/typing.html#module-contents
+* Any ... ```from typing import Any```
+* NoReturn
+* Tuple 
+* Union[int, str]
+* Callable 
+* Dict[str, int]
+* ...
+* alias example:
+```
+AllowedContainers = Union[List, Tuple, AbstractSet]
+
+def print_container_values(container: AllowedContainers):
+    for val in container:
+        print(val)
+```
+***
+***
+# Type Annotations and Mypy - Part 3
+* docs: https://docs.python.org/3/library/typing.html
+* Dict, List, Mapping, Optional, Union - from typing import [x]
+***
+***
+# Config files for the tools
+* if desired all of the config files for these tools can be merged into one single config file 
+* you only need to copy in the settings that differ from the default config settings
+```
+touch setup.cfg
+# -----------------
+
+[isort]
+...config...
+
+[mypy]
+...config...
+```
+***
+***
+# Setup the tools in vscode
+* install the python extensions mentioned in the earlier extensions
+* you can change your vscode settings so the linters automatically lint and show in the problems tab
+* example:
+```
+    {
+        // Editor settings
+        "editor.tabSize": 4,
+        "editor.rulers": [80, 120],
+        "editor.renderWhitespace": "trailing",
+        "editor.suggestSelection": "first",
+        "terminal.integrated.defaultProfile.windows": "Command Prompt",
+        // Explorer settings
+        "explorer.confirmDragAndDrop": false,
+        "explorer.confirmDelete": false,
+        "window.zoomLevel": 0,
+        // Files settings
+        "files.autoSave": "onFocusChange",
+        "files.associations": {
+            "*.pyx": "python"
+        },
+        // Workbench settings
+        "workbench.startupEditor": "newUntitledFile",
+        "workbench.editorAssociations": [
+            {
+                "viewType": "jupyter.notebook.ipynb",
+                "filenamePattern": "*.ipynb"
+            }
+        ],
+        // Python settings
+        "python.linting.enabled": true,
+        "python.linting.lintOnSave": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.linting.mypyEnabled": true,
+        "python.formatting.provider": "autopep8",
+        "python.languageServer": "Pylance",
+        "python.showStartPage": false,
+        "autoDocstring.generateDocstringOnEnter": true,
+        "jupyter.alwaysTrustNotebooks": true,
+        "pythonTestExplorer.testFramework": "pytest",
+        "autoDocstring.quoteStyle": "'''",
+        "jupyter.interactiveWindowMode": "perFile",
+        // Git settings
+        "git.enableSmartCommit": true,
+        "git.autofetch": true,
+        "git.confirmSync": false,
+        // IntelliSense AI Extension
+        "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+        // Formatting tools
+        "[python]": {
+            "editor.formatOnSave": false,
+            "editor.defaultFormatter": "ms-python.python"
+        },
+        // Other extensions
+        "formatContextMenu.closeAfterSave": true
+    }
+```
