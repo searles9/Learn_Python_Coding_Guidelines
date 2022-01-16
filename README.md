@@ -59,7 +59,7 @@ These notes were taken as part of a Udemy course I completed.
         <ol>
             <li><a href="#">Debugging in VS Code</a></li>
             <li><a href="#">Modules and Packages - Part 1</a></li>
-            <li><a href="#">desc</a></li>
+            <li><a href="#">Modules and Packages - Part 2</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
