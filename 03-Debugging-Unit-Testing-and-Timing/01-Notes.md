@@ -53,3 +53,119 @@ from vector import Vector2D
 ***
 # Profiling 
 * docs: https://docs.python.org/3/library/profile.html
+*  A profile is a set of statistics that describes how often and for how long various parts of the program executed. These statistics can be formatted into reports via the pstats module.
+*  The profiler modules are designed to provide an execution profile for a given program, not for benchmarking purposes (for that, there is timeit for reasonably accurate results). This particularly applies to benchmarking Python code against C code: the profilers introduce overhead for Python code, but not for C-level functions, and so the C code would seem faster than any Python one.
+*  It can help you find bottle necks in your programs
+*  example code (profiling code in another file):
+```
+'''Test code.
+'''
+# pylint: disable=import-error
+import cProfile
+import io
+import pstats
+import random
+import sys
+from functools import wraps
+
+from Chapter3_CodeTesting.Profiling.vector import Vector2D
+
+
+def profile(fn):
+    @wraps(fn)
+    def profiler(*args, **kwargs):
+        profiler = cProfile.Profile()
+        profiler.enable()
+        fn_result = fn(*args, **kwargs)
+        profiler.disable()
+        stream = io.StringIO()
+        ps = pstats.Stats(profiler, stream=stream).sort_stats('time')
+        ps.print_stats()
+        print(stream.getvalue())
+        return fn_result
+    return profiler
+
+
+@profile
+def test_addition_own_implementation():
+    for _ in range(100_000):
+        v1 = Vector2D(random.randint(-10, 10), random.randint(-10, 10))
+        v2 = Vector2D(random.randint(-10, 10), random.randint(-10, 10))
+        v3 = v1 + v2  # noqa
+
+
+def main() -> int:
+    test_addition_own_implementation()
+    return sys.exit(0)
+
+
+if __name__ == '__main__':
+    main()
+```
+* it will show the total time for a specific function call
+* to measure the execution time use the timeit module <--- usually more important
+* to find bottlenecks use profiles
+***
+***
+# Unit-Testing
+* docs: https://docs.python.org/3/library/unittest.html
+* * there is also pytest: https://docs.pytest.org/en/6.2.x/contents.html
+* the pytest framework makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries.
+* example tests:
+```
+'''Test code.
+'''
+# pylint: disable=import-error
+import unittest
+
+from Chapter3_CodeTesting.UnitTesting.vector import Vector2D
+
+
+class VectorTests(unittest.TestCase):
+    def setUp(self):
+        self.v1 = Vector2D(0, 0)
+        self.v2 = Vector2D(-1, 1)
+        self.v3 = Vector2D(2.5, -2.5)
+
+    def test_equality(self):
+        ''' Tests the equality operator.
+        '''
+        self.assertNotEqual(self.v1, self.v2)
+        expected_result = Vector2D(-1, 1)
+        self.assertEqual(self.v2, expected_result)
+
+    def test_add(self):
+        ''' Tests the addition operator.
+        '''
+        result = self.v1 + self.v2
+        expected_result = Vector2D(-1, 1)
+        self.assertEqual(result, expected_result)
+
+    def test_sub(self):
+        ''' Tests the subtraction operator.
+        '''
+        result = self.v2 - self.v3
+        expected_result = Vector2D(-3.5, 3.5)
+        self.assertEqual(result, expected_result)
+
+    def test_mul(self):
+        ''' Tests the multiplication operator.
+        '''
+        result1 = self.v1 * 5
+        expected_result1 = Vector2D(0.0, 0.0)
+        self.assertEqual(result1, expected_result1)
+        result2 = self.v1 * self.v2
+        expected_result2 = 0.0
+        self.assertEqual(result2, expected_result2)
+
+    def test_div(self):
+        ''' Tests the multiplication operator.
+        '''
+        result = self.v3 / 5
+        expected_result = Vector2D(0.5, -0.5)
+        self.assertEqual(result, expected_result)
+
+
+if __name__ == '__main__':
+    unittest.main()
+```

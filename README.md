@@ -47,6 +47,22 @@ These notes were taken as part of a Udemy course I completed.
       <a href="#">PAGE 1</a>
         <ol>
             <li><a href="#">Debugging in VS Code</a></li>
+            <li><a href="#">Timing </a></li>
+            <li><a href="#">Profiling</a></li>
+            <li><a href="#">Unit-Testing</a></li>
+        </ol>
+</details>
+
+<details>
+  <summary>Packaging</summary>
+      <a href="#">PAGE 1</a>
+        <ol>
+            <li><a href="#">Debugging in VS Code</a></li>
+            <li><a href="#">Modules and Packages - Part 1</a></li>
+            <li><a href="#">desc</a></li>
+            <li><a href="#">desc</a></li>
+            <li><a href="#">desc</a></li>
+            <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
