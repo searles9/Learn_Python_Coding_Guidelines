@@ -19,7 +19,7 @@ from package_1.printing import print_name
 ***
 * you can also make sub directories for a package:
 ```
-number_1(folder)
+number_2(folder)
 ---package_2(folder/package)
 ------__init__.py (tells python that its a package)
 ------utils(folder-sub-package)
@@ -38,3 +38,41 @@ from package_2.utils.printing import print_name
 ***
 ***
 # Modules and Packages - Part 2
+```
+number_3(folder)
+---package_3(folder/package)
+------__init__.py (tells python that its a package)
+------utils(folder-sub-package)
+---------printing (sub package of sub package)
+------------printing.py (part of the printing sub-package)
+------------__init__.py (part of the printing sub-package)
+---------__init__.py (part of the sub-package)
+---main.py (not part of package)
+```
+* you can make sub packages withing sub packages
+* you can control what people can import from the packages
+* for example you could add this to the ```__init__.py``` printing sub package:
+```
+from ._printing import print_hello_world
+from ._printing import print_name
+
+# you can list all functions that you want to export to the outside:
+__all__ = [
+    "print_hello_world",
+    "print_name"
+]
+```
+* in the main.py file you can then import them the same way:
+```
+from package_3.utils.printing import print_hello_world
+from package_3.utils.printing import print_name
+
+# or you can do this which would 
+# import everything in the __all__ list - IT HAS TO BE IN THAT # LIST IN THE __init__.py file:
+from package_3.utils.printing import *
+```
+* it is discouraged to use wildcard imports because you dont have a clear idea of what you are importing 
+* linting tools also have problems with the wildcard imports
+***
+***
+# 
