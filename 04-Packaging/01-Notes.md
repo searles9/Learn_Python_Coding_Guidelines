@@ -75,4 +75,20 @@ from package_3.utils.printing import *
 * linting tools also have problems with the wildcard imports
 ***
 ***
-# 
+# Creating a Package for an Example Vector Class
+* view the ```example_vector``` folder
+* notice the imports in the ```__init__.py``` files
+* notice how the unit test folder also has a ```__init__.py``` file
+* there is also a setup.py file
+  * this file allows you to configure the different attributes of the python package
+  * ```from setuptools import setup```
+  * versions: major.minor.micro (example: 1.4.0)
+  * micro: bug fixes that dont add any new functionality
+  * minor: adding new functions without changing the existing code
+  * major: breaking changes that will change the whole behavior of the package 
+* ```python setup.py install``` will install your final python package version to your Python enviorment 
+* ```python setup.py develop``` will install the current version (local files) which is in development
+***
+***
+# HTML Documentation with Mkdocs
+*

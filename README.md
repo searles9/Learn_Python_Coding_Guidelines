@@ -60,8 +60,8 @@ These notes were taken as part of a Udemy course I completed.
             <li><a href="#">Debugging in VS Code</a></li>
             <li><a href="#">Modules and Packages - Part 1</a></li>
             <li><a href="#">Modules and Packages - Part 2</a></li>
-            <li><a href="#">desc</a></li>
-            <li><a href="#">desc</a></li>
+            <li><a href="#">Creating a Package for an Example Vector Class</a></li>
+            <li><a href="#">HTML Documentation with Mkdocs</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
