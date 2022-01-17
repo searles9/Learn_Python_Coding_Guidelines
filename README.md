@@ -62,6 +62,11 @@ These notes were taken as part of a Udemy course I completed.
             <li><a href="#">Modules and Packages - Part 2</a></li>
             <li><a href="#">Creating a Package for an Example Vector Class</a></li>
             <li><a href="#">HTML Documentation with Mkdocs</a></li>
+            <li><a href="#">Install Make and Git</a></li>
+            <li><a href="#">Github Repository and GitHub Pages</a></li>
+            <li><a href="#">Makefile and Requirements</a></li>
+            <li><a href="#">More to Unit-Tests</a></li>
+            <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>
             <li><a href="#">desc</a></li>

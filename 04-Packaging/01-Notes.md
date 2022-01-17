@@ -91,4 +91,97 @@ from package_3.utils.printing import *
 ***
 ***
 # HTML Documentation with Mkdocs
-*
+* you can generate html docs based on your code: https://www.mkdocs.org/
+* it is common to put them in a docs folder
+* mkdocs works with certian type of docstrings - the best option is probably to use the google-style docstrings
+1. you create the markdown files
+2. you can specify what docstrings should be converted to html documentation (google docstrings in this case)
+   1. ex: 
+   ```
+   # References
+
+   ## Vector Class
+   ::: fastvector.vector
+   ```
+   2. this will generate documentation for every function in the vector.py file
+3. you can make an ```mkdocs.yaml``` file which contains the configuration for the documentation
+4. you can see all the possible commands ... ```mkdocs --help```
+5. to generate the HTML file run ```mkdocs build```
+   1. it will generate the docs in the "site" directory
+6. you can run ```mkdocs serve``` which rull run the site on your local machine 
+***
+***
+# Install Make and Git
+```
+    Mac:
+    Brew: https://brew.sh/index_de
+    Git: brew install git
+    Make: brew install make
+
+    Debian Linux:
+    Git: sudo apt-get install git
+    Make: sudo apt-get install make
+
+    Windows:
+    Chocolatey: https://chocolatey.org/install
+    Git: choco install git
+    Make: choco install make
+```
+***
+***
+# Github Repository and GitHub Pages
+* you can make a github repo and setup CI/CD and make it easy to see the docs
+1. create a public repo 
+2. git init in the project folder
+3. git add .
+4. git commit -m "message"
+5. git branch -M main
+6. git push -u origin main
+7. activate your virtual enviorment
+8. mkdocs --help
+9. deploy the docs to GHE: mkdocs gh-deploy
+   1.  this creates a new github branch called github-pages
+   2.  you can click enviorments and it will show the docs
+***
+***
+# Makefile and Requirements
+* the requirements.txt file contains the pip packages that your program needs to run
+* you may also want to make a requirements-dev.txt file that contains all the pip packages that the developers need to develop the code
+* the setup.py file also contains the required packages and those packages will be installed when you run the file
+  * the requirements.txt file is different though and is for people who are downloading your code from github and need to install the packages
+```
+pip install -r requirements.txt
+```
+### Makefile
+* make is a tool that uses make files
+* its a way to run CLI commands easily with aliases
+* you may have an alias called ```test``` that runs tests for a certian folder: ```make test```
+* you may have an alias that copies files to a certian folder 
+```
+SRC_CORE=fastvector
+SRC_TEST=tests
+SRC_BENCHMARK=benchmarks
+
+PYTHON=python
+PIP=pip
+
+help:
+	@echo "Available Commands:"
+	@echo " tests                  - Run unit tests."
+	@echo " tests-coverage         - Run unit tests and code coverage."
+	@echo " tests-coverage-html    - Run unit tests, code coverage and generate html."
+
+test:
+	$(PYTHON) -m pytest $(SRC_TEST)
+
+test-coverage:
+	$(PYTHON) -m pytest --cov=$(SRC_CORE) $(SRC_TEST)
+	$(PYTHON) -m codecov
+
+test-coverage-html:
+	$(PYTHON) -m pytest --cov=$(SRC_CORE) $(SRC_TEST) --cov-report=html
+```
+***
+***
+# More to Unit-Tests
+* 
