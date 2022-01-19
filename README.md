@@ -1,5 +1,4 @@
 # Learn_Python_Coding_Guidelines
-# I AM STILL TAKING THE COURSE AND ADDING NOTES
 
 **Personal Notes on Python Coding Guidelines, Tooling, Unit Testing and Packages**
 
@@ -8,7 +7,7 @@ These notes were taken as part of a Udemy course I completed.
 # Python Coding Guidelines, Tooling, Unit Testing and Packages
 * Course: https://www.udemy.com/course/python-coding-guidelines-tooling-testing-and-packaging/
 
-# TOC:
+# TOC (I will add the links later):
 <details>
   <summary>Intro</summary>
       <a href="#">PAGE 1</a>
@@ -66,12 +65,9 @@ These notes were taken as part of a Udemy course I completed.
             <li><a href="#">Github Repository and GitHub Pages</a></li>
             <li><a href="#">Makefile and Requirements</a></li>
             <li><a href="#">More to Unit-Tests</a></li>
-            <li><a href="#">desc</a></li>
-            <li><a href="#">desc</a></li>
-            <li><a href="#">desc</a></li>
-            <li><a href="#">desc</a></li>
-            <li><a href="#">desc</a></li>
-            <li><a href="#">desc</a></li>
+            <li><a href="#">Python Test Explorer</a></li>
+            <li><a href="#">Code Coverage</a></li>
+            <li><a href="#">GitHub WorkFlows and Pre-Commit</a></li>
         </ol>
 </details>
 

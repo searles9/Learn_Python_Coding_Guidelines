@@ -184,4 +184,93 @@ test-coverage-html:
 ***
 ***
 # More to Unit-Tests
-* 
+* example piece of test code:
+```
+class VectorTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.v1 = Vector2D(0, 0)
+        self.v2 = Vector2D(-1, 1)
+        self.v3 = Vector2D(2.5, -2.5)
+
+    def test_init(self) -> None:
+        result = Vector2D(-1, 1)
+        self.assertEqual(result, self.v2)
+        self.assertRaises(TypeError, Vector2D, 0, 'a')
+        self.assertRaises(TypeError, Vector2D, 'B', 1)
+        self.assertRaises(TypeError, Vector2D, 'B', 1)
+```
+* notice the method name ```test_```item - useful naming convention
+* you can check if a function returns an exception with self.assertRaises()
+***
+***
+# Python Test Explorer
+* test explorer is a vs-code extension
+* open command pallete and type Python: configure tests - configure the settings
+* you can run tests easily from the test explorer
+* you can run all tests or you can run a test for 1 method
+* the test explorer also makes it easy to debug 
+***
+***
+# Code Coverage 
+* ```pip install pytest-cov```
+* ```pip install codecov```
+* you can run code coverage tools to see how much of your code has been tested
+* if not 100% of your code has been tested you can add more tests
+* here is an example from a makefile
+```
+test-coverage:
+	$(PYTHON) -m pytest --cov=$(SRC_CORE) $(SRC_TEST)
+	$(PYTHON) -m codecov
+
+test-coverage-html:
+	$(PYTHON) -m pytest --cov=$(SRC_CORE) $(SRC_TEST) --cov-report=html
+```
+* there is also a cloud option where everyone can see the coverage: https://about.codecov.io/
+***
+***
+# GitHub WorkFlows and Pre-Commit
+* https://pre-commit.com/
+* from the website: "Git hook scripts are useful for identifying simple issues before submission to code review. We run our hooks on every commit to automatically point out issues in code such as missing semicolons, trailing whitespace, and debug statements. By pointing these issues out before code review, this allows a code reviewer to focus on the architecture of a change while not wasting time with trivial style nitpicks."
+* example before someone commits somthing to GHE you may want to use pre-commit to run flake8 and autopep
+* example pre-commit.yaml file:
+```
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-docstring-first
+    -   id: check-yaml
+
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.4
+    hooks:
+    -   id: flake8
+
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v1.5.4
+    hooks:
+    -   id: autopep8
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.790
+    hooks:
+    -   id: mypy
+
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.7.0
+    hooks:
+    -   id: isort
+```
+* parts explained:
+  * repo: the repo or package to use for the hoop
+  * rev: the version of the package
+    * go to the repo and check the releases portion to see the versions
+  * hooks: the name of the item
+* to setup precommit use ```pre-commit install```
+* to run it on your own: ```pre-commit run --all-files```
+### CI tests
+* you can run continous integration tests in github
+* you would need to make a workflows folder  - under this path: ```.github\workflows```
+* see the section code for an example (section-code\example_github_code\FastvectorEng\.github\workflows)
